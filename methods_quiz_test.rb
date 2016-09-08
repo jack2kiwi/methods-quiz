@@ -87,4 +87,18 @@ describe "Methods" do
 
   end
 
+  describe "two_as_one?" do
+
+    it "returns true if two add up to the other one" do
+      two_as_one?(1, 2, 3).must_equal(true)
+      two_as_one?(7, 10, 3).must_equal(true)
+      two_as_one?(13, 7, 6).must_equal(true)
+    end
+
+    it "return false if two do not add up to the other one" do
+      two_as_one?(237, 523, 213).must_equal(false)
+    end
+
+  end
+
 end
