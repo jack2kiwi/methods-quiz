@@ -80,7 +80,7 @@ describe "Methods" do
     end
 
     it "returns the closer number" do
-      closer_to(15, 14, 20).must_equal(15)
+      closer_to(15, 14, 20).must_equal(14)
       closer_to(2, 17, 2).must_equal(2)
       closer_to(30, 35, 18).must_equal(35)
     end

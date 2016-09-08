@@ -31,6 +31,17 @@ def icy_hot?(a, b)
 end
 
 # TODO - write closer_to
+def closer_to(target, a, b)
+  howCloseA = (a - target).abs
+  howCloseB = (b - target).abs
+  if howCloseA == howCloseB
+    0
+  elsif howCloseA < howCloseB
+    a
+  else
+    b
+  end
+end
 
 # TODO - write two_as_one?
 
