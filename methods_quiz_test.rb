@@ -31,7 +31,7 @@ describe "Methods" do
   describe "not_string" do
 
     it "does not change with a not in the beginning" do
-      not_string?("not true").must_equal("not true")
+      not_string("not true").must_equal("not true")
     end
 
     it "adds not to a string if it does not start with a not" do
