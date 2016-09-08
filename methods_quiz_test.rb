@@ -40,4 +40,37 @@ describe "Methods" do
 
   end
 
+  describe "icy_hot?" do
+
+    it "returns false if one is icy but other is not hot" do
+      icy_hot?(-1, 30).must_equal(false)
+    end
+
+    it "returns false if one is hot but other is not icy" do
+      icy_hot?(30, 304).must_equal(false)
+    end
+
+    it "returns false if neither is icy or hot" do
+      icy_hot?(34, 30).must_equal(false)
+    end
+
+    it "returns false both are icy" do
+      icy_hot?(-354, -23).must_equal(false)
+    end
+
+    it "returns false both are hot" do
+      icy_hot?(126, 437).must_equal(false)
+    end
+
+    it "returns false if both are on the edge" do
+      icy_hot?(0, 100).must_equal(false)
+    end
+
+    it "returns true if one is icy and the other is hot" do
+      icy_hot?(-3, 107).must_equal(true)
+      icy_hot?(101, -1).must_equal(true)
+    end
+
+  end
+
 end
