@@ -44,5 +44,15 @@ def closer_to(target, a, b)
 end
 
 # TODO - write two_as_one?
+def two_as_one?(a, b, c)
+  ab = a + b
+  ac = a + c
+  bc = b + c
+  if ab == c || ac == b || bc == a
+    true
+  else
+    false
+  end
+end
 
 # TODO - write pig_latinify
