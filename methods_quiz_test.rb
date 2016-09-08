@@ -23,7 +23,7 @@ describe "Methods" do
     end
 
     it "returns false if none of the numbers are between 13 and 19" do
-      has_teen?(12, 71, 23).must_equal(true)
+      has_teen?(12, 71, 23).must_equal(false)
     end
 
   end
