@@ -111,4 +111,12 @@ describe "Methods" do
 
   end
 
+  describe "tutnese" do
+
+    it "converts single words to tutnese" do
+      tutnese("hello").must_equal("hashesqualulo")
+    end
+
+  end
+
 end
