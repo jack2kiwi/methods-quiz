@@ -101,15 +101,15 @@ describe "Methods" do
 
   end
 
-  describe "pig_latinify" do
-
-    it "talks in pig latin" do
-      pig_latinify("the").must_equal("ethay")
-      pig_latinify("old").must_equal("oldway")
-      pig_latinify("dog").must_equal("ogday")
-    end
-
-  end
+  # describe "pig_latinify" do
+  #
+  #   it "talks in pig latin" do
+  #     pig_latinify("the").must_equal("ethay")
+  #     pig_latinify("old").must_equal("oldway")
+  #     pig_latinify("dog").must_equal("ogday")
+  #   end
+  # 
+  # end
 
   describe "tutnese" do
 

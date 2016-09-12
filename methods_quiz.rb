@@ -59,86 +59,58 @@ end
 
 
 
-def tutnese(string)
-  str = string.downcase
-  l = str.length
-  n = 0
-  while n <= l
-    if str[n] == str[(n + 1)]
-      if str[n] == "a" || str[n] == "e" || str[n] == "i" || str[n] == "o" || str[n] == "u"
-        (str[n]).replace ("squat" + str[n])
-        n = n + 6
-      else
-        (str[n]).replace "squa"
-        n = n + 4
-      end
-    elsif str[n] == "a" || str[n] == "e" || str[n] == "i" || str[n] == "o" || str[n] == "u"
-      n = n + 1
-    elsif str[n] == "b"
-      (str[n]).replace "bub"
-      n = n + 3
-    elsif str[n] == "c"
-      (str[n]).replace "cash"
-      n = n + 4
-    elsif str[n] == "d"
-      (str[n]).replace "dud"
-      n = n + 3
-    elsif str[n] == "f"
-      (str[n]).replace "fuf"
-      n = n + 3
-    elsif str[n] == "g"
-      (str[n]).replace "gug"
-      n = n + 3
-    elsif str[n] == "h"
-      (str[n]).replace "hash"
-      n = n + 4
-    elsif str[n] == "j"
-      (str[n]).replace "jay"
-      n = n + 3
-    elsif str[n] == "k"
-      (str[n]).replace "kuck"
-      n = n + 4
-    elsif str[n] == "l"
-      (str[n]).replace "lul"
-      n = n + 3
-    elsif str[n] == "m"
-      (str[n]).replace "mum"
-      n = n + 3
-    elsif str[n] == "n"
-      (str[n]).replace "nun"
-      n = n + 3
-    elsif str[n] == "p"
-      (str[n]).replace "pub"
-      n = n + 3
-    elsif str[n] == "q"
-      (str[n]).replace "quack"
-      n = n + 5
-    elsif str[n] == "r"
-      (str[n]).replace "rug"
-      n = n + 3
-    elsif str[n] == "s"
-      (str[n]).replace "sus"
-      n = n + 3
-    elsif str[n] == "t"
-      (str[n]).replace "tut"
-      n = n + 3
-    elsif str[n] == "v"
-      (str[n]).replace "vuv"
-      n = n + 3
-    elsif str[n] == "w"
-      (str[n]).replace "wack"
-      n = n + 4
-    elsif str[n] == "x"
-      (str[n]).replace "ex"
-      n = n + 2
-    elsif str[n] == "y"
-      (str[n]).replace "yub"
-      n = n + 3
-    elsif str[n] == "z"
-      (str[n]).replace "zub"
-      n = n + 3
-    end
-    l = str.length
-  end
-  str
+
+
+# TODO - write tutnese
+def tutnese str
+	str.strip!
+	newstr, letters, i = "", [], 0
+	while i < str.length
+		letters.push(str[i])
+		i += 1
+	end
+
+	i = 0
+	while i < letters.length
+		if letters[i] == letters[i + 1]
+			if is_vowel? letters[i]
+				newstr << "squat" + letters[i]
+			else
+				newstr << "squa" + tutnese_letter(letters[i])
+			end
+			i += 1
+		else
+			newstr << tutnese_letter(letters[i])
+		end
+		i += 1
+	end
+
+	newstr
+end
+
+def is_vowel? l
+	l = l[0]
+	l == "a" || l == "e" || l == "i" || l == "o" || l == "u"
+end
+
+def tutnese_letter l
+	l = l[0]
+
+	case l.downcase
+	when 'b', 'd', 'g', 'f', 'g', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'x'
+		l.downcase + 'u' + l.downcase
+	when 'c', 'h', 'w'
+		l.downcase + "ash"
+	when 'j'
+		l.downcase + "ug"
+	when 'k', 'y'
+		l.downcase + "uck"
+	when 'q'
+		l.downcase + "uack"
+	when 'z'
+		l.downcase + "ub"
+	else
+		l.downcase
+	end
+
 end
